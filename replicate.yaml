@@ -1,0 +1,27 @@
+run:
+  gpu: true
+  python_version: "3.10"
+  system_packages:
+    - "libgl1-mesa-glx"
+  python_packages:
+    - "torch==2.1.0"
+    - "transformers"
+    - "diffusers"
+    - "accelerate"
+    - "safetensors"
+    - "opencv-python"
+    - "numpy"
+    - "Pillow"
+  command: "python -m cog.server"
+
+input:
+  image:
+    type: file
+    help: "Input room image"
+  prompt:
+    type: string
+    default: "modern interior design, bright, stylish, high quality"
+    help: "Description of the new room style"
+
+output:
+  type: file
